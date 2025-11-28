@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -52,6 +53,10 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </AuthProvider>
   );
 }
