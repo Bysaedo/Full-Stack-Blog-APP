@@ -4,6 +4,7 @@ import { AuthContext } from "../context/authContext";
 import { getPostById, updatePost } from "../services/api";
 import PostForm from "../components/PostForm";
 import "./EditPost.css";
+import { Toaster } from "react-hot-toast";
 
 const EditPost = () => {
   const { id } = useParams();
