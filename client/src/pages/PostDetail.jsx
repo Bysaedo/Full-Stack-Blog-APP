@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getPostById, deletePost } from "../services/api";
 import { AuthContext } from "../context/authContext";
+import { toast } from "react-hot-toast";
 import "./PostDetail.css";
 
 const PostDetail = () => {
@@ -20,8 +21,9 @@ const PostDetail = () => {
         setPost(data);
         setError(null);
       } catch (err) {
-        setError(
-          "Failed to load post. It may not exist or the server is down."
+        setError("Failed to load post. It may not exist or the server is down");
+        toast.error(
+          "Failed to load post. It may not exist or the server is down"
         );
         console.error(err);
       } finally {
@@ -46,20 +48,43 @@ const PostDetail = () => {
   };
 
   const handleDelete = async () => {
-    if (
-      window.confirm(
-        "Are you sure you want to delete this post? This action cannot be undone."
-      )
-    ) {
-      try {
-        await deletePost(id);
-        navigate("/");
-      } catch (err) {
-        const errorMsg =
-          err.response?.data?.msg || "Failed to delete post. Please try again.";
-        alert(errorMsg);
-      }
-    }
+    toast(
+      (t) => (
+        <div>
+          <p>
+            Are you sure you want to delete this post? This action cannot be
+            undone.
+          </p>
+          <div id="delete-toast">
+            <button
+              className="delete-button"
+              onClick={async () => {
+                toast.dismiss(t.id);
+                try {
+                  await deletePost(id);
+                  toast.success("Post deleted");
+                  navigate("/");
+                } catch (err) {
+                  const errorMsg =
+                    err.response?.data?.msg ||
+                    "Failed to delete post. Please try again";
+                  toast.error(errorMsg);
+                }
+              }}
+            >
+              Yes
+            </button>
+            <button
+              className="back-button"
+              onClick={() => toast.dismiss(t.id)}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ),
+      { duration: Infinity }
+    );
   };
 
   // Check if current user owns the post

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import { getPosts } from "../services/api";
 import { AuthContext } from "../context/authContext";
+import toast from "react-hot-toast";
 import "./Home.css";
 
 const Home = () => {
@@ -22,7 +23,10 @@ const Home = () => {
         setError(null);
       } catch (err) {
         setError(
-          "Failed to load posts. Make sure the backend server is running."
+          "Failed to load posts. Make sure the backend server is running"
+        );
+        toast.error(
+          "Failed to load posts. Make sure the backend server is running"
         );
         console.error(err);
       } finally {

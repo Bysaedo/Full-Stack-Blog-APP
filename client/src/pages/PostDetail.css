@@ -93,3 +93,9 @@
   color: #21a1c4;
   text-decoration: underline;
 }
+
+#delete-toast {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
