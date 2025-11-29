@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import Register from "../components/Register";
+import toast from "react-hot-toast";
 import "./AuthPages.css";
 
 const RegisterPage = () => {
@@ -17,7 +18,8 @@ const RegisterPage = () => {
 
   const handleRegister = async (name, email, password) => {
     const result = await register(name, email, password);
-    if (result.success) {
+    if (result?.success) {
+      toast.success("Registration successful");
       navigate("/");
     }
   };

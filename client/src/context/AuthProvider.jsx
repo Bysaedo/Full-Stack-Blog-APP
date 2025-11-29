@@ -5,6 +5,8 @@ import {
   loginUser as loginUserAPI,
 } from "../services/api";
 import { AuthContext } from "./authContext";
+import React from "react";
+import toast from "react-hot-toast";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -49,12 +51,12 @@ export const AuthProvider = ({ children }) => {
       setToken(data.token);
       setUser(decoded.user);
       setLoading(false);
-
       return { success: true };
     } catch (err) {
       const errorMsg =
         err.response?.data?.errors?.[0]?.msg || "Registration failed";
       setError(errorMsg);
+      toast.error(errorMsg);
       setLoading(false);
       return { success: false, error: errorMsg };
     }
@@ -70,6 +72,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("token", data.token);
 
       const decoded = jwtDecode(data.token);
+      toast.success("Welcome back!");
 
       setToken(data.token);
       setUser(decoded.user);
@@ -78,6 +81,7 @@ export const AuthProvider = ({ children }) => {
       return { success: true };
     } catch (err) {
       const errorMsg = err.response?.data?.errors?.[0]?.msg || "Login failed";
+      toast.error(errorMsg);
       setError(errorMsg);
       setLoading(false);
       return { success: false, error: errorMsg };

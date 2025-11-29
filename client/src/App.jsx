@@ -51,12 +51,13 @@ function App() {
               }
             />
           </Routes>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            containerClassName="toast-container"
+          />
         </div>
       </Router>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
     </AuthProvider>
   );
 }

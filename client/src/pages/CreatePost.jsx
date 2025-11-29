@@ -25,8 +25,8 @@ const CreatePost = () => {
       const errorMsg =
         err.response?.data?.errors?.[0]?.msg ||
         err.response?.data?.msg ||
-        toast.success("Failed to create post. Please try again.");
-      setError(errorMsg);
+        "Failed to create post. Please try again";
+      toast.error(errorMsg);
       setLoading(false);
     }
   };

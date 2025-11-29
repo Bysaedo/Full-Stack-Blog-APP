@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import { getPostById, updatePost } from "../services/api";
 import PostForm from "../components/PostForm";
+import { toast } from "react-hot-toast";
 import "./EditPost.css";
-import { Toaster } from "react-hot-toast";
 
 const EditPost = () => {
   const { id } = useParams();
@@ -23,8 +23,9 @@ const EditPost = () => {
 
         // Verify user owns the post
         if (user && data.user._id !== user.id) {
-          setError("You don't have permission to edit this post.");
+          setError("You don't have permission to edit this post");
           setLoading(false);
+          toast.error("You don't have permission to edit this post");
           return;
         }
 
@@ -32,10 +33,11 @@ const EditPost = () => {
         setError(null);
         setLoading(false);
       } catch (err) {
-        setError(
-          "Failed to load post. It may not exist or the server is down."
-        );
+        setError("Failed to load post. It may not exist or the server is down");
         setLoading(false);
+        toast.error(
+          "Failed to load post. It may not exist or the server is down"
+        );
       }
     };
 
@@ -48,6 +50,7 @@ const EditPost = () => {
       setSubmitting(true);
 
       await updatePost(id, title, body);
+      toast.success("Post updated successfully");
 
       // Navigate to the updated post
       navigate(`/posts/${id}`);
@@ -55,8 +58,9 @@ const EditPost = () => {
       const errorMsg =
         err.response?.data?.errors?.[0]?.msg ||
         err.response?.data?.msg ||
-        "Failed to update post. Please try again.";
+        "Failed to update post. Please try again";
       setError(errorMsg);
+      toast.error(errorMsg);
       setSubmitting(false);
     }
   };
