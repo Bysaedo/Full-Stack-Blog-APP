@@ -17,9 +17,10 @@ body {
 }
 
 .toast-container > div > div {
+  background-color: var(--background-color);
   border-style: solid;
   border-radius: 0.5rem;
-  border-color: #61dafb;
-  color: #282c34;
+  border-color: var(--default-text-lb);
+  color: var(--default-light-dark);
   font-weight: bold;
 }

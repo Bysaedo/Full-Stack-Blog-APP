@@ -33,12 +33,24 @@ code {
   --background-color: #f5f5f5;
   --default-light-dark: #282c34;
   --default-text-lb: #61dafb;
+  --second-text-lb: #21a1c4;
   --default-white: white;
   --a-hover: #535bf2;
+  --subtitle-color: #666;
+  --light-red: #d32f2f;
+  --disable-color: #b0b0b0;
+  --post-detail-color: #444;
+  --border-color-default: #e0e0e0;
+  --background-error-default: #ffebee;
 }
 
 [data-theme="dark"] {
-  --background-color: purple;
+  --background-color: black;
+  --default-light-dark: #2e3038;
+  --default-white: #676b79;
+  --subtitle-color: black;
+  --border-color-default: #81838a;
+  --background-error-default: #400606;
 }
 
 a {

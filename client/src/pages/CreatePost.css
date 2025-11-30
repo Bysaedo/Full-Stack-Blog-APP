@@ -6,9 +6,9 @@
 .error-message {
   max-width: 800px;
   margin: 0 auto 1.5rem;
-  background-color: #ffebee;
+  background-color: var(--background-error-default);
   color: #c62828;
   padding: 0.75rem;
   border-radius: 4px;
-  border-left: 4px solid #d32f2f;
+  border-left: 4px solid var(--light-red);
 }

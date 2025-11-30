@@ -6,17 +6,17 @@
 .error-message {
   max-width: 800px;
   margin: 0 auto 1.5rem;
-  background-color: #ffebee;
+  background-color: var(--background-error-default);
   color: #c62828;
   padding: 0.75rem;
   border-radius: 4px;
-  border-left: 4px solid #d32f2f;
+  border-left: 4px solid var(--light-red);
 }
 
 .back-button {
   background: none;
   border: none;
-  color: #61dafb;
+  color: var(--default-text-lb);
   font-size: 1rem;
   cursor: pointer;
   padding: 0.5rem 0;
@@ -25,6 +25,6 @@
 }
 
 .back-button:hover {
-  color: #21a1c4;
+  color: var(--second-text-lb);
   text-decoration: underline;
 }

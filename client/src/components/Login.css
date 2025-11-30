@@ -1,7 +1,7 @@
 .login-form {
   max-width: 450px;
   margin: 0 auto;
-  background: white;
+  background: var(--default-white);
   padding: 2.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -9,13 +9,13 @@
 
 .login-form h2 {
   margin: 0 0 0.5rem 0;
-  color: #282c34;
+  color: var(--default-light-dark);
   font-size: 2rem;
 }
 
 .login-subtitle {
   margin: 0 0 2rem 0;
-  color: #666;
+  color: var(--subtitle-color);
   font-size: 1rem;
 }
 
@@ -26,7 +26,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #282c34;
+  color: var(--default-light-dark);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -34,7 +34,7 @@
 .form-group input {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border-color-default);
   border-radius: 4px;
   font-size: 1rem;
   transition: border-color 0.3s;
@@ -42,34 +42,34 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #61dafb;
+  border-color: var(--default-text-lb);
 }
 
 .form-group input.input-error {
-  border-color: #d32f2f;
+  border-color: var(--light-red);
 }
 
 .field-error {
   display: block;
-  color: #d32f2f;
+  color: var(--light-red);
   font-size: 0.85rem;
   margin-top: 0.25rem;
 }
 
 .error-message {
-  background-color: #ffebee;
+  background-color: var(--background-error-default);
   color: #c62828;
   padding: 0.75rem;
   border-radius: 4px;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #d32f2f;
+  border-left: 4px solid var(--light-red);
 }
 
 .submit-button {
   width: 100%;
   padding: 0.875rem;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: var(--default-text-lb);
+  color: var(--default-light-dark);
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -79,10 +79,10 @@
 }
 
 .submit-button:hover {
-  background-color: #21a1c4;
+  background-color: var(--second-text-lb);
 }
 
 .submit-button:disabled {
-  background-color: #b0b0b0;
+  background-color: var(--disable-colo);
   cursor: not-allowed;
 }
