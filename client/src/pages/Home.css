@@ -12,13 +12,13 @@
 }
 
 .home-header h1 {
-  color: #282c34;
+  color: var(--default-light-dark);
   margin: 0;
 }
 .create-post-button {
   padding: 0.75rem 1.5rem;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: var(--default-text-lb);
+  color: var(--default-light-dark);
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -28,17 +28,17 @@
 }
 
 .create-post-button:hover {
-  background-color: #21a1c4;
+  background-color: var(--second-text-lb);
 }
 
 .auth-message {
-  color: #666;
+  color: var(--subtitle-color);
   font-size: 1rem;
   margin: 0;
 }
 
 .auth-message a {
-  color: #61dafb;
+  color: var(--default-text-lb);
   text-decoration: none;
   font-weight: 600;
 }
@@ -55,13 +55,13 @@
 }
 
 .error {
-  color: #d32f2f;
+  color: var(--light-red);
 }
 
 .no-posts {
   text-align: center;
   margin-top: 3rem;
-  color: #666;
+  color: var(--subtitle-color);
 }
 
 .posts-list {

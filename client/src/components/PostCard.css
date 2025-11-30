@@ -1,5 +1,5 @@
 .post-card {
-  background: white;
+  background: var(--default-white);
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -20,7 +20,7 @@
 
 .post-card h2 {
   margin: 0 0 0.5rem 0;
-  color: #282c34;
+  color: var(--default-light-dark);
   font-size: 1.5rem;
 }
 
@@ -29,7 +29,7 @@
   gap: 1rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--subtitle-color);
 }
 
 .post-author {
@@ -37,13 +37,13 @@
 }
 
 .post-preview {
-  color: #444;
+  color: var(--subtitle-color);
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
 .read-more {
-  color: #61dafb;
+  color: var(--default-text-lb);
   font-weight: 500;
 }
 

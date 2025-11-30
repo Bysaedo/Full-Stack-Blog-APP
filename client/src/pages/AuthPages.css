@@ -12,12 +12,12 @@
 }
 
 .auth-switch p {
-  color: #666;
+  color: var(--subtitle-color);
   font-size: 0.95rem;
 }
 
 .auth-switch a {
-  color: #61dafb;
+  color: var(--default-text-lb);
   text-decoration: none;
   font-weight: 600;
 }
