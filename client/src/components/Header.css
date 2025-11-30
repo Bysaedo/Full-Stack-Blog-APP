@@ -1,6 +1,6 @@
 .header {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--default-light-dark);
+  color: var(--default-white);
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -15,7 +15,7 @@
 }
 
 .header-title {
-  color: white;
+  color: var(--default-white);
   text-decoration: none;
 }
 
@@ -31,26 +31,26 @@
 }
 
 .nav-link {
-  color: white;
+  color: var(--default-white);
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s;
 }
 
 .nav-link:hover {
-  color: #61dafb;
+  color: var(--default-text-lb);
 }
 
 .user-welcome {
-  color: #61dafb;
+  color: var(--default-text-lb);
   font-size: 1rem;
   font-weight: 500;
 }
 
 .nav-button {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--default-white);
+  border: 2px solid var(--default-white);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 1rem;
@@ -60,6 +60,27 @@
 }
 
 .nav-button:hover {
-  background-color: white;
-  color: #282c34;
+  background-color: var(--default-white);
+  color: var(--default-light-dark);
+}
+
+.toggle-container {
+  position: relative;
+}
+
+.toggle-container:hover {
+  color: var(--default-text-lb);
+}
+
+.toggle {
+  visibility: hidden;
+  padding-left: 0.1rem;
+  width: 0;
+  height: 0;
+}
+
+.toggle + label {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
 }

@@ -9,14 +9,34 @@ import LoginPage from "./pages/LoginPage";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import "./App.css";
+import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 
 function App() {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+
+    const stored = localStorage.getItem("isDark");
+    if (stored !== null) return stored === "true";
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
+    localStorage.setItem("isDark", isDark.toString());
+  }, [isDark]);
   return (
     <AuthProvider>
       <Router>
         <div className="App">
-          <Header />
+          <Header
+            isDark={isDark}
+            setIsDark={setIsDark}
+          />
           <Routes>
             <Route
               path="/"
