@@ -42,6 +42,7 @@ code {
   --post-detail-color: #444;
   --border-color-default: #e0e0e0;
   --background-error-default: #ffebee;
+  --toast-text-color: #282c34;
 }
 
 [data-theme="dark"] {
@@ -51,6 +52,7 @@ code {
   --subtitle-color: black;
   --border-color-default: #81838a;
   --background-error-default: #400606;
+  --toast-text-color: white;
 }
 
 a {

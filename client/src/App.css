@@ -21,6 +21,6 @@ body {
   border-style: solid;
   border-radius: 0.5rem;
   border-color: var(--default-text-lb);
-  color: var(--default-light-dark);
+  color: var(--toast-text-color);
   font-weight: bold;
 }
