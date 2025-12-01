@@ -12,7 +12,7 @@
 }
 
 .auth-switch p {
-  color: var(--subtitle-color);
+  color: var(--disable-color);
   font-size: 0.95rem;
 }
 
