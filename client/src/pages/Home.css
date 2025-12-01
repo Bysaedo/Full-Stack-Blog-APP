@@ -32,7 +32,7 @@
 }
 
 .auth-message {
-  color: var(--subtitle-color);
+  color: var(--disable-color);
   font-size: 1rem;
   margin: 0;
 }
